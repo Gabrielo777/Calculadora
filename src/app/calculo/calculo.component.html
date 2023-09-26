@@ -1,0 +1,31 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Calculadora
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Number 1</ion-label>
+    <ion-input [(ngModel)]="num1" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Number 2</ion-label>
+    <ion-input [(ngModel)]="num2" type="number"></ion-input>
+  </ion-item>
+
+  <ion-row class="ion-justify-content-center">
+    <ion-button (click)="calculate('soma')">Soma</ion-button>
+    <ion-button (click)="calculate('subtracao')">Subtracao</ion-button>
+    <ion-button (click)="calculate('multiplicacao')">Multiplicacao</ion-button>
+    <ion-button (click)="calculate('divisao')">Divisao</ion-button>
+  </ion-row>
+
+  <ion-item *ngIf="result !== undefined">
+    <ion-label position="floating">Result</ion-label>
+    <ion-input [(ngModel)]="result" type="number" disabled></ion-input>
+  </ion-item>
+</ion-content>
